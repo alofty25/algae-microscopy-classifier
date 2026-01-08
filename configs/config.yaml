@@ -1,0 +1,75 @@
+# Configuration for Algae Microscopy Classifier
+# Save as: configs/config.yaml
+
+# Data Configuration
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_dir: "data/train"
+  val_dir: "data/val"
+  test_dir: "data/test"
+
+  # Image specifications (adjust based on your microscopy images)
+  image_size: 224  # Standard for transfer learning
+  channels: 3  # RGB
+
+  # Data split ratios
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+  # Class names (UPDATE these based on your algae types)
+  classes:
+    - "Spherical"      # Like image (a)
+    - "Filamentous"    # Like image (b)
+    - "Colonial"       # Like image (c)
+    - "Complex"        # Like image (d)
+
+# Model Configuration
+model:
+  name: "efficientnet_b0"  # Options: efficientnet_b0, resnet50, vit_base
+  pretrained: true
+  num_classes: 4  # Update based on number of algae types
+  dropout: 0.3
+
+# Training Configuration
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+
+  # Early stopping
+  patience: 10
+  min_delta: 0.001
+
+  # Device
+  device: "cuda"  # Options: cuda, cpu, mps (for Mac M1/M2)
+  num_workers: 4
+
+  # Checkpointing
+  save_best_only: true
+  checkpoint_dir: "outputs/models"
+
+# Data Augmentation (critical for microscopy images!)
+augmentation:
+  train:
+    horizontal_flip: 0.5
+    vertical_flip: 0.5
+    rotation: 90  # degrees (90° increments common for microscopy)
+    brightness: 0.2
+    contrast: 0.2
+    gaussian_noise: 0.01
+
+  val_test:
+    # Minimal augmentation for validation/test
+    normalize_only: true
+
+# Logging
+logging:
+  log_dir: "outputs/logs"
+  tensorboard: true
+  save_frequency: 5  # Save every N epochs
+
+# Reproducibility
+seed: 42
