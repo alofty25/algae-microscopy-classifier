@@ -1,0 +1,9 @@
+Feature,Fisher_Score,Rank,Category
+bbox_perimeter,10.624767487477385,1,Shape
+bbox_width,9.03676292155329,2,Shape
+bbox_height,9.031462559789071,3,Shape
+bbox_area,7.5556996969287065,4,Shape
+kurt_B,0.9589101277540345,5,RGB Color
+skew_B,0.9376440366358917,6,RGB Color
+std_S,0.8663201459459464,7,HSV Color
+std_B,0.5061194190428977,8,RGB Color
