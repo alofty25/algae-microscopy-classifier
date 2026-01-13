@@ -9,8 +9,8 @@ This project focuses on the **automated classification of algae morphotypes** fr
 The system is designed to recognize multiple algae morphotypes such as **spherical, filamentous, colonial**, and others, directly from microscopy images.
 
 ## Members 
-Ahmed Mohamed Lotfy 22P0251 - @alotfy25
-Adham Hisham Kandil 22P0217 - @Kandil122
+* Ahmed Mohamed Lotfy 22P0251 - @alotfy25
+* Adham Hisham Kandil 22P0217 - @Kandil122
 ---
 
 ## 🎯 Key Features
