@@ -32,12 +32,50 @@ The system is designed to recognize multiple algae morphotypes such as **spheric
 
 ---
 
-## 🗂️ Algae Morphotypes Supported
+### 🗂️  Project Structure
 
-* Spherical
-* Filamentous
-* Colonial
-* (Extendable to additional morphotypes or species)
+```
+algae-microscopy-classifier/
+├── configs/
+│   └── config.yaml              # Configuration file
+├── data/
+│   ├── train/
+│   │   ├── images/              # Training images
+│   │   └── labels/              # Training labels (YOLO format)
+│   ├── test/
+│   │   ├── images/              # Test images
+│   │   └── labels/              # Test labels
+│   └── data.yaml                # Dataset configuration
+├── src/
+│   └── data/
+│       ├── __init__.py
+│       ├── Data_import.py       # Dataset download utilities
+│       ├── algae_dataset.py     # Custom PyTorch Dataset
+│       └── dataloader.py         # DataLoader utilities
+├── notebooks/
+│   ├── exploratary_data_analysis.ipynb
+│   ├── feature_importance_fisher.ipynb
+│   ├── traditional_ml_classifiers.ipynb
+│   ├── train_cnn_classifier.ipynb
+│   ├── verify_data_pipeline.ipynb
+│   ├── visualize_algae.ipynb
+│   └── yolo_based_evaluation.py
+├── outputs/
+│   ├── models/
+│   │   └── best_algae_cnn.pth   # Trained CNN model
+│   ├── best_ml_model_xgboost.pkl
+│   ├── feature_scaler.pkl
+│   ├── extracted_features.csv
+│   ├── fisher_scores_all_features.csv
+│   ├── recommended_features.csv
+│   ├── confusion_matrices.png
+│   ├── detection_examples.png
+│   └── ml_models_comparison.png
+├── main.py                       # Main entry point
+├── requirements.txt              # Python dependencies
+├── pyproject.toml                # Project configuration
+└── README.md                     # Project overview
+```
 
 ---
 
